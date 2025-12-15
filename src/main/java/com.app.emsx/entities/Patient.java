@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -32,8 +33,10 @@ public class Patient {
     private LocalDate dateOfBirth;
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<MedicalRecord> medicalRecords = new ArrayList<>();
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Appointment> appointments = new ArrayList<>();
 }
