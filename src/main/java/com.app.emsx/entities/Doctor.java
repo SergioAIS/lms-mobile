@@ -24,7 +24,7 @@ public class Doctor {
     private String email;
     private String phone;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "specialty_id")
     private Specialty specialty;
 
