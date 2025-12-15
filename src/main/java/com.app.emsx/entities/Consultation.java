@@ -16,11 +16,11 @@ public class Consultation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "appointment_id", nullable = false)
     private Appointment appointment;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "medical_record_id", nullable = false)
     private MedicalRecord medicalRecord;
 
